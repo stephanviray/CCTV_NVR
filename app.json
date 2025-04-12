@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "application-capstone-nvr",
+    "slug": "snack-7955af98-4c34-4eff-93f6-a7016835c69f",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to scan QR codes for easy camera configuration",
+        "NSLocationWhenInUseUsageDescription": "This app needs location access to configure WiFi settings",
+        "NSLocalNetworkUsageDescription": "This app uses Wi-Fi to configure your CCTV device.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to save and access recorded videos",
+        "NSPhotoLibraryAddUsageDescription": "This app needs permission to save recorded videos to your photo library"
+      },
+      "bundleIdentifier": "com.yourcamera.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.yourcamera.app",
+      "permissions": [
+        "ACCESS_WIFI_STATE",
+        "CHANGE_WIFI_STATE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "MEDIA_LIBRARY"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to scan QR codes"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos to save recorded videos",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save recorded videos to your photo library",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "qrCodeFormat": {
+        "name": "string",
+        "ip": "string",
+        "location": "string"
+      }
+    }
+  }
+}
